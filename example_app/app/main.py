@@ -15,7 +15,7 @@ class App:
             }
         )
         version = f"{sys.version_info.major}.{sys.version_info.minor}"
-        message = f"Test app. From Uvicorn with Gunicorn. Using Python {version}".encode(
+        message = f"Test app. From FastAPI running on Uvicorn with Gunicorn. Using Python {version}".encode(
             "utf-8"
         )
         await send({"type": "http.response.body", "body": message})
