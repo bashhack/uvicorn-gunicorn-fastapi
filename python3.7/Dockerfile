@@ -1,4 +1,4 @@
-FROM bashhack/uvicorn-gunicorn
+FROM bashhack/uvicorn-gunicorn:python3.7
 
 LABEL maintainer="Marc Laughton (bashhack) - <info@marclaughton.com>"
 
