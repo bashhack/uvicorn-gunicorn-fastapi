@@ -1,4 +1,4 @@
-FROM uvicorn-gunicorn
+FROM bashhack/uvicorn-gunicorn
 
 LABEL maintainer="Marc Laughton (bashhack) - <info@marclaughton.com>"
 
