@@ -2,8 +2,8 @@ import json
 
 from docker.errors import NotFound
 
-CONTAINER_NAME = "uvicorn-gunicorn-test"
-IMAGE_NAME = "uvicorn-gunicorn-testimage"
+CONTAINER_NAME = "uvicorn-gunicorn-fastapi-test"
+IMAGE_NAME = "uvicorn-gunicorn-fastapi-testimage"
 
 
 def get_process_names(container):
