@@ -1,0 +1,31 @@
+dist: xenial
+
+language: python
+
+python:
+  - "3.7"
+
+install:
+  - pip install pipenv
+  - pipenv install --dev
+
+services:
+  - docker
+
+env:
+  - NAME='latest' BUILD_PATH='python3.7' TEST_STR1='Hello world! From FastAPI running on Uvicorn with Gunicorn. Using Python 3.7' TEST_STR2='Test app. From FastAPI running on Uvicorn with Gunicorn. Using Python 3.7'
+  - NAME='python3.7' BUILD_PATH='python3.7' TEST_STR1='Hello world! From FastAPI running on Uvicorn with Gunicorn. Using Python 3.7' TEST_STR2='Test app. From FastAPI running on Uvicorn with Gunicorn. Using Python 3.7'
+
+script:
+  - bash scripts/test.sh
+
+jobs:
+    include:
+      - script: bash scripts/test.sh
+      - stage: deploy
+        script: skip
+        deploy:
+          provider: script
+          script: bash scripts/build-push-all.sh
+          on:
+            branch: master
