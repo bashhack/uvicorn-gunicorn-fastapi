@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-fastapi = {extras = ["all"], version = "==0.44.0"}
+fastapi = {extras = ["all"], version = "==0.65.2"}
 
 [requires]
 python_version = "3.7"
